@@ -12,7 +12,8 @@ public class SLList
     Node header;
     static class Node
     {
-        boolean elem; Node next;
+        boolean elem;
+        Node next;
     }
 
     boolean repOk()
@@ -37,5 +38,9 @@ public class SLList
         // postcondition: adds <e> in a new node at the beginning of the
         // list; the rest of the list is unmodified
         // your code goes here
+        Node n = new Node();
+        n.elem = e;
+        n.next = header;
+        header = n;
     }
 }
