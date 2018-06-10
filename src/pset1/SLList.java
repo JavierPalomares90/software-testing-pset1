@@ -7,7 +7,7 @@ import java.util.Set;
  * @author Javier Palomares
  */
 
-public class SList
+public class SLList
 {
     Node header;
     static class Node
