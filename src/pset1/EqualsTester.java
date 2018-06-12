@@ -19,15 +19,52 @@ public class EqualsTester
     /*
     * P1: For any non-null reference value x, x.equals(null) should return false.
     */
-    @Test public void t0() {
-    assertFalse(new Object().equals(null));
+    @Test public void t0()
+    {
+        assertFalse(new Object().equals(null));
     }
+
     // your test methods for P1 go here
+
+    @Test public void testCDoesNotEqualNull()
+    {
+        C c = new C(0);
+        assertFalse(c.equals(null));
+    }
+
+    @Test public void testDDoesNotEqualNull()
+    {
+        D d = new D(0,0);
+        assertFalse(d.equals(null));
+    }
+
     /*
     * P2: It is reflexive: for any non-null reference value x, x.equals(x)
     * should return true.
     */
     // your test methods for P2 go here
+
+    /**
+     *
+     */
+    @Test public void t1()
+    {
+        Object o = new Object();
+        assertTrue(o.equals(o));
+    }
+
+    @Test public void testCIsReflexive()
+    {
+        C c = new C(0);
+        assertTrue(c.equals(c));
+    }
+
+    @Test public void testDIsReflexive()
+    {
+        D d = new D(0,0);
+        assertTrue(d.equals(d));
+    }
+
     /*
     * P3: It is symmetric: for any non-null reference values x and y, x.equals(y)
     * should return true if and only if y.equals(x) returns true.
