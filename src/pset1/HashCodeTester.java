@@ -11,7 +11,7 @@ import org.junit.Test;
     P5 : If two objects are equal according to the equals(Object) method, then calling the hashCode
     method on each of the two objects must produce the same integer result.
  */
-public class HasCodeTester
+public class HashCodeTester
 {
     /*
     * P5: If two objects are equal according to the equals(Object)

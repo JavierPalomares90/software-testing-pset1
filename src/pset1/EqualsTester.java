@@ -70,6 +70,30 @@ public class EqualsTester
     * should return true if and only if y.equals(x) returns true.
     */
     // your test methods for P3 go here
+    @Test public void testObjectIsSymmetric()
+    {
+        Object o1 = new Object();
+        Object o2 = new Object();
+        assertFalse(o1.equals(o2));
+        assertFalse(o2.equals(o1));
+    }
+
+    // your test methods for P3 go here
+    @Test public void testObjectIsSymmetric2()
+    {
+        Object o1 = new Object();
+        Object o2 = o1;
+        assertTrue(o1.equals(o2));
+        assertTrue(o2.equals(o1));
+    }
+
+    // your test methods for P3 go here
+    @Test public void testCIsSymmetric()
+    {
+        C c1 = new C(0);
+        c1.f = 0;
+    }
+
     /*
     * P4: It is transitive: for any non-null reference values x, y, and z,
     * if x.equals(y) returns true and y.equals(z) returns true, then
