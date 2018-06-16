@@ -89,10 +89,13 @@ public class EqualsTester
     {
         Object o1 = new Object();
         Object o2 = new Object();
-        boolean o1Equalso2 = o1.equals(o2);
-        boolean o2Equalso1 = o2.equals(o1);
-        // If equals() is symmetric, then the 2 booleans must have the same value
-        assertTrue(o1Equalso2 == o2Equalso1);
+        boolean o1EqualsO2 = o1.equals(o2);
+        boolean o2EqualsO1 = o2.equals(o1);
+        if(o1EqualsO2)
+        {
+            // If equals() is symmetric, then the 2 booleans must have the same value
+            assertTrue(o2EqualsO1);
+        }
     }
 
     @Test
@@ -100,10 +103,13 @@ public class EqualsTester
     {
         C c1 = new C(0);
         C c2 = new C(0);
-        boolean c1Equalsc2 = c1.equals(c2);
-        boolean c2Equalsc1 = c2.equals(c1);
-        // Test if C's implementation of equals is symmetric
-        assertTrue(c1Equalsc2 == c2Equalsc1);
+        boolean c1EqualsC2 = c1.equals(c2);
+        boolean c2EqualsC1 = c2.equals(c1);
+        if(c1EqualsC2)
+        {
+            // Test if C's implementation of equals is symmetric
+            assertTrue(c2EqualsC1);
+        }
     }
 
     @Test
@@ -113,8 +119,12 @@ public class EqualsTester
         D d2 = new D(0,0);
         boolean d1EqualsD2 = d1.equals(d2);
         boolean d2EqualsD1 = d2.equals(d1);
-        // Test if D's implementation of equals is symmetric
-        assertTrue(d1EqualsD2 == d2EqualsD1);
+        if(d1EqualsD2)
+        {
+            // Test if D's implementation of equals is symmetric
+            assertTrue(d2EqualsD1);
+
+        }
     }
 
     @Test
@@ -124,7 +134,11 @@ public class EqualsTester
         C c = new C(0);
         boolean oEqualsC = o.equals(c);
         boolean cEqualsO = c.equals(o);
-        assertTrue(cEqualsO == oEqualsC);
+        if(oEqualsC)
+        {
+            assertTrue(cEqualsO);
+
+        }
     }
 
     @Test
@@ -134,7 +148,10 @@ public class EqualsTester
         D d = new D(0,0);
         boolean oEqualsD = o.equals(d);
         boolean dEqualsO = d.equals(o);
-        assertTrue(oEqualsD == dEqualsO);
+        if(oEqualsD)
+        {
+            assertTrue(dEqualsO);
+        }
     }
 
     @Test
@@ -144,7 +161,11 @@ public class EqualsTester
         D d = new D(0,0);
         boolean cEqualsD = c.equals(d);
         boolean dEqualsC = d.equals(c);
-        assertTrue(cEqualsD == dEqualsC);
+        if(cEqualsD)
+        {
+            assertTrue(dEqualsC);
+
+        }
     }
 
     /**
@@ -153,19 +174,41 @@ public class EqualsTester
     @Test
     public void testCEqualsObjectIsSymmetric()
     {
+        C c = new C(0);
+        Object o = new Object();
+        boolean cEqualsO = c.equals(o);
+        boolean oEqualsC = o.equals(c);
+        if(cEqualsO)
+        {
+            assertTrue(oEqualsC);
+        }
     }
 
     @Test
     public void testDEqualsObjectIsSymmetric()
     {
+        D d = new D(0,0);
+        Object o = new Object();
+        boolean dEqualsO = d.equals(o);
+        boolean oEqualsD = o.equals(d);
+        if(dEqualsO)
+        {
+            assertTrue(oEqualsD);
+        }
     }
 
     @Test
     public void testDEqualsCIsSymmetric()
     {
+        D d = new D(0,0);
+        C c = new C(0);
+        boolean dEqualsC = d.equals(c);
+        boolean cEqualsD = c.equals(d);
+        if(dEqualsC)
+        {
+            assertTrue(cEqualsD);
+        }
     }
-
-
 
     /*
     * P4: It is transitive: for any non-null reference values x, y, and z,
