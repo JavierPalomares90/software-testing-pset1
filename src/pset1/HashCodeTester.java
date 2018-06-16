@@ -27,8 +27,11 @@ public class HashCodeTester
         Object o2 = new Object();
         boolean objectsEqual = o1.equals(o2);
         boolean hashCodesEqual = o1.hashCode() == o2.hashCode();
-        // If the two objects are equal, their hashcodes must be equal
-        assertTrue(objectsEqual == hashCodesEqual);
+        if(objectsEqual)
+        {
+            // If the two objects are equal, their hashcodes must be equal
+            assertTrue(hashCodesEqual);
+        }
     }
 
     @Test
@@ -38,7 +41,10 @@ public class HashCodeTester
         C c2 = new C(0);
         boolean csEqual = c1.equals(c2);
         boolean hashCodesEqual = c1.hashCode() == c2.hashCode();
-        assertTrue(csEqual == csEqual);
+        if(csEqual)
+        {
+            assertTrue(hashCodesEqual);
+        }
     }
 
     @Test
@@ -48,7 +54,10 @@ public class HashCodeTester
         D d2 = new D(0,0);
         boolean dsEqual = d1.equals(d2);
         boolean hashCodesEqual = d1.hashCode() == d2.hashCode();
-        assertTrue(dsEqual == hashCodesEqual);
+        if(dsEqual)
+        {
+            assertTrue(hashCodesEqual);
+        }
     }
 
     @Test
@@ -56,9 +65,12 @@ public class HashCodeTester
     {
         Object o = new Object();
         C c = new C(0);
-        boolean cAndOEqual = c.equals(o);
+        boolean oAndCEqual = o.equals(c);
         boolean hashCodesEqual = c.hashCode() == o.hashCode();
-        assertTrue(cAndOEqual == hashCodesEqual);
+        if(oAndCEqual)
+        {
+            assertTrue(hashCodesEqual);
+        }
     }
 
     @Test
@@ -66,9 +78,12 @@ public class HashCodeTester
     {
         Object o = new Object();
         D d = new D(0,0);
-        boolean dAndOEqual = d.equals(o);
+        boolean oAndDEqual = o.equals(d);
         boolean hashCodesEqual = d.hashCode() == o.hashCode();
-        assertTrue(dAndOEqual == hashCodesEqual);
+        if(oAndDEqual)
+        {
+            assertTrue(hashCodesEqual);
+        }
     }
 
     @Test
@@ -78,24 +93,48 @@ public class HashCodeTester
         D d = new D(0,0);
         boolean cAndDEqual = c.equals(d);
         boolean hashCodesEqual = c.hashCode() == d.hashCode();
-        assertTrue(cAndDEqual == hashCodesEqual);
+        if(cAndDEqual)
+        {
+            assertTrue(hashCodesEqual);
+        }
     }
 
-    /**
-     * TODO: Complete these tests
-     */
     @Test
     public void hashCodeTestCAndObject()
     {
+        C c = new C(0);
+        Object o = new Object();
+        boolean cAndOEqual = c.equals(o);
+        boolean hashCodesEqual = c.hashCode() == o.hashCode();
+        if(cAndOEqual)
+        {
+            assertTrue(hashCodesEqual);
+        }
     }
 
     @Test
     public void hashCodeTestDAndObject()
     {
+        D d = new D(0,0);
+        Object o = new Object();
+        boolean dAndOEqual = d.equals(o);
+        boolean hashCodesEqual = d.hashCode() == o.hashCode();
+        if(dAndOEqual)
+        {
+            assertTrue(hashCodesEqual);
+        }
     }
 
     @Test
     public void hashCodeTestDAndC()
     {
+        D d = new D(0,0);
+        C c  = new C(0);
+        boolean dAndCEqual = d.equals(c);
+        boolean hashCodesEqual = d.hashCode() == c.hashCode();
+        if(dAndCEqual)
+        {
+            assertTrue(hashCodesEqual);
+        }
     }
 }

@@ -168,9 +168,6 @@ public class EqualsTester
         }
     }
 
-    /**
-     * TODO: Complete these tests
-     */
     @Test
     public void testCEqualsObjectIsSymmetric()
     {
