@@ -8,7 +8,13 @@ import org.junit.Test;
  */
 public class SLListAddTester
 {
-    @Test public void test0()
+    /**
+     * Asserts that all value of the list
+     * true->null
+     * equal the expected value
+     */
+    @Test
+    public void test0()
     {
         SLList l = new SLList();
         assertTrue(l.repOk());
@@ -22,7 +28,13 @@ public class SLListAddTester
         assertTrue(l.header.next == null);
     }
 
-    @Test public void test1()
+    /**
+     * Asserts that all value of the list
+     * false->true->null
+     * equal the expected value
+     */
+    @Test
+    public void test1()
     {
         SLList l = new SLList();
         assertTrue(l.repOk());
