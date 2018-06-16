@@ -147,6 +147,24 @@ public class EqualsTester
         assertTrue(cEqualsD == dEqualsC);
     }
 
+    /**
+     * TODO: Complete these tests
+     */
+    @Test
+    public void testCEqualsObjectIsSymmetric()
+    {
+    }
+
+    @Test
+    public void testDEqualsObjectIsSymmetric()
+    {
+    }
+
+    @Test
+    public void testDEqualsCIsSymmetric()
+    {
+    }
+
 
 
     /*
